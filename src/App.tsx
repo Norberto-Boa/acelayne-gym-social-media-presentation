@@ -2,7 +2,7 @@ import { useState } from "react";
 import PostCard from "./components/PostCard";
 import WeekTabs from "./components/WeekTabs";
 import { posts } from "./data/posts";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { ScrollArea } from "./components/ui/scroll-area";
 
 function App() {
@@ -21,19 +21,23 @@ function App() {
 
       <WeekTabs selected={selectedWeek} onSelect={setSelectedWeek} />
 
-      <ScrollArea className="h-[600-px] p-2">
-        <motion.div
-          className="grid md:grid-cols-3 gap-6 mt-8"
-          key={selectedWeek}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.4 }}
-        >
-          {weekPosts.map((p) => (
-            <PostCard key={p.title} {...p} />
-          ))}
-        </motion.div>
+      <ScrollArea className="h-[600px] p-2">
+        <div className="min-h-full">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={selectedWeek}
+              className="grid md:grid-cols-3 gap-6"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}
+            >
+              {weekPosts.map((p) => (
+                <PostCard key={p.title} {...p} />
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </div>
       </ScrollArea>
 
       <div className="mx-auto mt-10">
