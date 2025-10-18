@@ -4,6 +4,16 @@ import WeekTabs from "./components/WeekTabs";
 import { posts } from "./data/posts";
 import { AnimatePresence, motion } from "motion/react";
 import { ScrollArea } from "./components/ui/scroll-area";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "./components/ui/table";
+import { insights } from "./data/insights";
 
 function App() {
   const [selectedWeek, setSelectedWeek] = useState(1);
@@ -21,12 +31,12 @@ function App() {
 
       <WeekTabs selected={selectedWeek} onSelect={setSelectedWeek} />
 
-      <ScrollArea className="h-[600px] p-2">
+      <ScrollArea className=" md:h-[460px] lg:h-[490px] h-[600px] p-2">
         <div className="min-h-full">
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedWeek}
-              className="grid md:grid-cols-3 gap-6"
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -40,6 +50,42 @@ function App() {
         </div>
       </ScrollArea>
 
+      {/* Insights */}
+      <div className="mx-auto my-10">
+        <h2 className="text-2xl font-semibold mb-4 text-orange-600">
+          📊 Métricas de Desempenho
+        </h2>
+
+        <Table>
+          <TableCaption>
+            Dados a serem extraidos do Meta (Facebook & Instagram){" "}
+          </TableCaption>
+          <TableHeader>
+            <TableRow className="">
+              <TableHead className="w-[100px] text-orange-600">
+                🚀 Objectivo
+              </TableHead>
+              <TableHead className="w-[200px] text-orange-600">
+                🎯 Meta
+              </TableHead>
+              <TableHead className="w-[200px] text-orange-600">
+                📈 Indicador
+              </TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {insights.map((insight) => (
+              <TableRow key={insight.id}>
+                <TableCell className="font-semibold">{insight.goal}</TableCell>
+                <TableCell>{insight.target}</TableCell>
+                <TableCell>{insight.indicator}</TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
+
+      {/*Notas de Design  */}
       <div className="mx-auto mt-10">
         <h2 className="text-2xl font-semibold mb-4 text-orange-600">
           🎨 Notas de Design
