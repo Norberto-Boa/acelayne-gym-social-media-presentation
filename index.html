@@ -1,10 +1,65 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://cdn-icons-png.flaticon.com/512/755/755262.png"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>acelayne-plan-presentation</title>
+    <meta
+      name="description"
+      content="Plano completo de 8 semanas de gestão de mídia social para o Acelayne Gym. Estratégia, conteúdo, design e métricas para engajamento e crescimento."
+    />
+    <meta
+      name="keywords"
+      content="Acelayne Gym, Ginasio, Gestão de Mídia Social, Plano de Conteúdo, Fitness, Marketing Digital, Estratégia de Redes Sociais"
+    />
+    <meta name="author" content="AnyTech Solutions" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta
+      property="og:title"
+      content="Acelayne Gym – Plano de Gestão de Mídia Social"
+    />
+    <meta
+      property="og:description"
+      content="Plano completo de 8 semanas de gestão de mídia social para o Acelayne Gym com estratégia, posts, reels e métricas de desempenho."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://acelayne-gym-social-media-presentat.vercel.app/"
+    />
+    <meta
+      property="og:image"
+      content="https://lh3.googleusercontent.com/rd-d/ALs6j_H8TF_ingou4cVmEZs0KVgE6BrNJ4IIMmM_p8JB0va1x3Zwsh8IUK__XVVsK52OZIwEFaTA8ldpk4V33LsGPUFw4wUXi1A478mfuj2VTtLNNmqcSLgqL0IO4snRBvuucgbxNi02mIXj6myue04gPgaVMV_I3fkz8fgH6ULRkorz9GFA4JrTjfqKxvfog2N_5Fa5M9ftmylWDKeuyHKTxn2i2w_j5v4UZlJQry8yJAUnRsYBAIuB8DCyc2MCeA045uriDfVD6RHHg6EsTNzSy1ywzaBTTB62gHyCz1DsOD6LHXCsP8yuZA_6woswEsCAZrB_KJ17rCwRsXQYTZzBB6MCepFRB3QFWijNnkIvTyeW2FwhwfI7F1NneK7wKzkvrI9c3m8IzqmeLqqNK-tNT8J7ojQvwk-G0aAw-QnIoSglHGzlnK-ISvtZQVopQr4e03YeBpRql9QzkyZppaJ_5ybGk4sC-oDNBrVd4sXCbWksY_ICXJWXOYbZJk1iwjzAIAsx0gXcxRsfawahG0DPq5DM-7K2ro_m0baheiraOEg7rGvM4oTyi6_8DcmE_W4Oh-7MI-mVqvO6kajdetK8XWT4FZQJ9ZWJIw1j05M0obSfF1Nt_OdBcA7EDJfnax1DRJpWrWyk7LN5qk64iJ2dlNZtJSs_4TuwsNX8LxquIomNpXQ-3XPgUfCoxBfw2jWLWiKSwK6UKMULB8ThJZJngzWCGKOwFcIQDwDq7BuXsnCIyEbvQHXuuANSnw5L0IHkkM82lLMJaO4Mj4cHB8U4iwiEmE-3ADLaTaIyjhZWtYCfHlpEgCUCIaYF2EHwKVAQZn9NZ_NJ3ajzr0kruWoJR6xo63qKIWYYgpurREU0RtNQ7EWw77S951f6nZhRemh9-xANFujf9Ekd5VhdYQP8zodSIBHXLvgHTf1wEUtbzpKn-BNRvcEzEwnFwWQgr48KgXQ3bxzUeLWC_Goe-vLqqMOKbNkiMWvc25ybQuoXQ0i0Cm2vorhRzI6olM_D-K2OF9QqfrQ-CQ=w2000-h4036?auditContext=forDisplay"
+    />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Acelayne Gym – Plano de Gestão de Mídia Social"
+    />
+    <meta
+      name="twitter:description"
+      content="8 semanas de plano de mídia social para engajamento e crescimento do Acelayne Gym."
+    />
+    <meta
+      name="twitter:image"
+      content="https://lh3.googleusercontent.com/rd-d/ALs6j_H8TF_ingou4cVmEZs0KVgE6BrNJ4IIMmM_p8JB0va1x3Zwsh8IUK__XVVsK52OZIwEFaTA8ldpk4V33LsGPUFw4wUXi1A478mfuj2VTtLNNmqcSLgqL0IO4snRBvuucgbxNi02mIXj6myue04gPgaVMV_I3fkz8fgH6ULRkorz9GFA4JrTjfqKxvfog2N_5Fa5M9ftmylWDKeuyHKTxn2i2w_j5v4UZlJQry8yJAUnRsYBAIuB8DCyc2MCeA045uriDfVD6RHHg6EsTNzSy1ywzaBTTB62gHyCz1DsOD6LHXCsP8yuZA_6woswEsCAZrB_KJ17rCwRsXQYTZzBB6MCepFRB3QFWijNnkIvTyeW2FwhwfI7F1NneK7wKzkvrI9c3m8IzqmeLqqNK-tNT8J7ojQvwk-G0aAw-QnIoSglHGzlnK-ISvtZQVopQr4e03YeBpRql9QzkyZppaJ_5ybGk4sC-oDNBrVd4sXCbWksY_ICXJWXOYbZJk1iwjzAIAsx0gXcxRsfawahG0DPq5DM-7K2ro_m0baheiraOEg7rGvM4oTyi6_8DcmE_W4Oh-7MI-mVqvO6kajdetK8XWT4FZQJ9ZWJIw1j05M0obSfF1Nt_OdBcA7EDJfnax1DRJpWrWyk7LN5qk64iJ2dlNZtJSs_4TuwsNX8LxquIomNpXQ-3XPgUfCoxBfw2jWLWiKSwK6UKMULB8ThJZJngzWCGKOwFcIQDwDq7BuXsnCIyEbvQHXuuANSnw5L0IHkkM82lLMJaO4Mj4cHB8U4iwiEmE-3ADLaTaIyjhZWtYCfHlpEgCUCIaYF2EHwKVAQZn9NZ_NJ3ajzr0kruWoJR6xo63qKIWYYgpurREU0RtNQ7EWw77S951f6nZhRemh9-xANFujf9Ekd5VhdYQP8zodSIBHXLvgHTf1wEUtbzpKn-BNRvcEzEwnFwWQgr48KgXQ3bxzUeLWC_Goe-vLqqMOKbNkiMWvc25ybQuoXQ0i0Cm2vorhRzI6olM_D-K2OF9QqfrQ-CQ=w2000-h4036?auditContext=forDisplay"
+    />
+    <meta name="twitter:site" content="@AnyTechMoz" />
+    <meta name="twitter:creator" content="@AnyTechMoz" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      Acelayne Gym – Plano de Gestão de Mídia Social | AnyTech Solutions
+    </title>
   </head>
   <body>
     <div id="root"></div>
