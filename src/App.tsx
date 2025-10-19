@@ -4,16 +4,7 @@ import WeekTabs from "./components/WeekTabs";
 import { posts } from "./data/posts";
 import { AnimatePresence, motion } from "motion/react";
 import { ScrollArea } from "./components/ui/scroll-area";
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "./components/ui/table";
-import { insights } from "./data/insights";
+import InsightsTable from "./components/InsightsTable";
 
 function App() {
   const [selectedWeek, setSelectedWeek] = useState(1);
@@ -55,34 +46,7 @@ function App() {
         <h2 className="text-2xl font-semibold mb-4 text-orange-600">
           📊 Métricas de Desempenho
         </h2>
-
-        <Table>
-          <TableCaption>
-            Dados a serem extraidos do Meta (Facebook & Instagram){" "}
-          </TableCaption>
-          <TableHeader>
-            <TableRow className="">
-              <TableHead className="w-[100px] text-orange-600">
-                🚀 Objectivo
-              </TableHead>
-              <TableHead className="w-[200px] text-orange-600">
-                🎯 Meta
-              </TableHead>
-              <TableHead className="w-[200px] text-orange-600">
-                📈 Indicador
-              </TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {insights.map((insight) => (
-              <TableRow key={insight.id}>
-                <TableCell className="font-semibold">{insight.goal}</TableCell>
-                <TableCell>{insight.target}</TableCell>
-                <TableCell>{insight.indicator}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+        <InsightsTable />
       </div>
 
       {/*Notas de Design  */}
